@@ -9,11 +9,13 @@ const TitleSection = styled.section`
   align-items: center;
   gap: 29px;
   h1 {
+    text-align: center;
     font-size: 56px;
     font-weight: 700;
     color: #2d3648;
   }
   p {
+    text-align: center;
     font-size: 22px;
     font-weight: 400;
     color: #2d3648;
@@ -29,12 +31,14 @@ const ContentSection = styled.section`
 `;
 
 const Title = styled.h1`
+  text-align: center;
   font-size: 48px;
   font-weight: 700;
   color: #2d3648;
   line-height: 120%;
 `;
 const Content = styled.p`
+  text-align: center;
   font-size: 22px;
   font-weight: 400;
   color: #2d3648;
@@ -42,6 +46,7 @@ const Content = styled.p`
   font-feature-settings: "calt" off;
 `;
 const Button = styled.button`
+  text-align: center;
   all: unset;
   cursor: pointer;
   font-size: 16px;

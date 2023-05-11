@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "./Link";
 import { styled } from "styled-components";
 
 const HeaderContainer = styled.header`
@@ -37,11 +38,21 @@ export default function Nav() {
     <HeaderContainer>
       <div>Logo</div>
       <NavContainer>
-        <NavButton>ABOUT</NavButton>
-        <NavButton>파일 변환</NavButton>
-        <NavButton>기출 자료</NavButton>
-        <NavButton>도움말</NavButton>
-        <NavButton>문의하기</NavButton>
+        <NavButton>
+          <Link href="/">ABOUT</Link>
+        </NavButton>
+        <NavButton>
+          <Link href="/convert">파일 변환</Link>
+        </NavButton>
+        <NavButton>
+          <Link href="/previous-test">기출 자료</Link>
+        </NavButton>
+        <NavButton>
+          <Link href="/faq">도움말</Link>
+        </NavButton>
+        <NavButton>
+          <Link href="/help">문의하기</Link>
+        </NavButton>
       </NavContainer>
     </HeaderContainer>
   );
