@@ -1,3 +1,5 @@
+import GlobalStyle from "@/lib/globalstyle";
+import StyledComponentsRegistry from "@/lib/registry";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,8 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StyledComponentsRegistry>
+      <GlobalStyle />
+      <html lang="ko">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </StyledComponentsRegistry>
   );
 }
