@@ -1,3 +1,4 @@
+import Nav from "@/components/Nav";
 import GlobalStyle from "@/lib/globalstyle";
 import StyledComponentsRegistry from "@/lib/registry";
 import { Inter } from "next/font/google";
@@ -16,9 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <StyledComponentsRegistry>
-      <GlobalStyle />
       <html lang="ko">
-        <body className={inter.className}>{children}</body>
+        <GlobalStyle />
+        <body className={inter.className}>
+          <Nav />
+          {children}
+        </body>
       </html>
     </StyledComponentsRegistry>
   );

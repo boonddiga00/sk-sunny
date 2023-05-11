@@ -3,6 +3,7 @@
 import { styled } from "styled-components";
 
 const TitleSection = styled.section`
+  margin-top: 163px;
   display: flex;
   flex-direction: column;
   align-items: center;
