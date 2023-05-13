@@ -1,5 +1,7 @@
 "use client";
 
+import MainButton from "@/components/Buttons/MainButton";
+import CustomLink from "@/components/CustomLink";
 import { styled } from "styled-components";
 
 const TitleSection = styled.section`
@@ -45,18 +47,6 @@ const Content = styled.p`
   letter-spacing: -0.01em;
   font-feature-settings: "calt" off;
 `;
-const Button = styled.button`
-  text-align: center;
-  all: unset;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2d3648;
-  border: 2px solid #2d3648;
-  border-radius: 6px;
-  padding: 12px 20px;
-  margin-top: 30px;
-`;
 
 export default function Home() {
   return (
@@ -68,27 +58,35 @@ export default function Home() {
       <ContentSection>
         <Title>파일 변환 기능</Title>
         <Content>간단 소개 문구</Content>
-        <Button>파일 변환하기</Button>
+        <CustomLink href="/convert">
+          <MainButton>파일 변환하기</MainButton>
+        </CustomLink>
       </ContentSection>
       <ContentSection>
         <Title>기출 DB</Title>
         <Content>간단 소개 문구</Content>
-        <Button>기출 DB</Button>
+        <CustomLink href="/previous-test">
+          <MainButton>기출 DB</MainButton>
+        </CustomLink>
       </ContentSection>
       <ContentSection>
         <Title>3D 프린터기</Title>
         <Content>간단 소개 문구</Content>
-        <Button>See More 3</Button>
+        <MainButton>See More 3</MainButton>
       </ContentSection>
       <ContentSection>
         <Title>도움말</Title>
         <Content>간단 소개 문구</Content>
-        <Button>FAQ</Button>
+        <CustomLink href="/faq">
+          <MainButton>FAQ</MainButton>
+        </CustomLink>
       </ContentSection>
       <ContentSection>
         <Title>문의하기</Title>
         <Content>간단 소개 문구</Content>
-        <Button>문의하기</Button>
+        <CustomLink href="/help">
+          <MainButton>문의하기</MainButton>
+        </CustomLink>
       </ContentSection>
     </>
   );
