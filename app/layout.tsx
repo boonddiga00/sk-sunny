@@ -16,14 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <StyledComponentsRegistry>
-      <html lang="ko">
+    <html lang="ko">
+      <StyledComponentsRegistry>
         <GlobalStyle />
         <body className={inter.className}>
           <Nav />
           {children}
         </body>
-      </html>
-    </StyledComponentsRegistry>
+      </StyledComponentsRegistry>
+    </html>
   );
 }

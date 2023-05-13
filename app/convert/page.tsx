@@ -24,7 +24,7 @@ const ConvertLoader = styled.div`
 `;
 
 export default function Convert() {
-  const [fileName, setFileName] = useState("");
+  const [file, setFile] = useState<File | null>(null);
   const [isFileConverting, setIsFileConverting] = useState(false);
   const [isFileConverted, setIsFileConverted] = useState(false);
   return (
@@ -35,15 +35,15 @@ export default function Convert() {
         </ConvertLoader>
       ) : !isFileConverted ? (
         <FileForm
-          fileName={fileName}
-          setFileName={setFileName}
+          file={file}
+          setFile={setFile}
           setIsFileConverting={setIsFileConverting}
           setIsFileConverted={setIsFileConverted}
         />
       ) : (
         <FileDownload
-          fileName={fileName}
-          setFileName={setFileName}
+          file={file}
+          setFile={setFile}
           setIsFileConverting={setIsFileConverting}
           setIsFileConverted={setIsFileConverted}
         />

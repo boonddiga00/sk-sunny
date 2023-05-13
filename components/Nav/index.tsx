@@ -2,6 +2,7 @@
 
 import { styled } from "styled-components";
 import NavButton from "./NavButton";
+import { usePathname } from "next/navigation";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -22,15 +23,26 @@ const NavContainer = styled.nav`
 `;
 
 export default function Nav() {
+  const pathname = usePathname();
   return (
     <HeaderContainer>
       <div>Logo</div>
       <NavContainer>
-        <NavButton href="/">ABOUT</NavButton>
-        <NavButton href="/convert">파일 변환</NavButton>
-        <NavButton href="/previous-test">기출 자료</NavButton>
-        <NavButton href="/faq">도움말</NavButton>
-        <NavButton href="help">문의하기</NavButton>
+        <NavButton href="/" pathname={pathname}>
+          ABOUT
+        </NavButton>
+        <NavButton href="/convert" pathname={pathname}>
+          파일 변환
+        </NavButton>
+        <NavButton href="/previous-test" pathname={pathname}>
+          기출 자료
+        </NavButton>
+        <NavButton href="/faq" pathname={pathname}>
+          도움말
+        </NavButton>
+        <NavButton href="/help" pathname={pathname}>
+          문의하기
+        </NavButton>
       </NavContainer>
     </HeaderContainer>
   );

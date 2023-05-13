@@ -3,28 +3,10 @@
 import FileBox from "@/app/convert/FileBox";
 import MainButton from "@/components/Buttons/MainButton";
 import SubButton from "@/components/Buttons/SubButton";
+import MainSection from "@/components/Sections/MainSection";
+import TitleText from "@/components/Sections/TitleText";
 import { Dispatch, SetStateAction, useRef } from "react";
 import { styled } from "styled-components";
-
-const TitleSection = styled.section`
-  margin-top: 143px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  h1 {
-    text-align: center;
-    font-size: 56px;
-    font-weight: 700;
-    color: #2d3648;
-  }
-  p {
-    text-align: center;
-    font-size: 22px;
-    font-weight: 400;
-    color: #2d3648;
-  }
-`;
 
 const Buttons = styled.div`
   display: flex;
@@ -37,15 +19,15 @@ const Buttons = styled.div`
 `;
 
 interface IFileForm {
-  fileName: string;
-  setFileName: Dispatch<SetStateAction<string>>;
+  file: File | null;
+  setFile: Dispatch<SetStateAction<File | null>>;
   setIsFileConverting: Dispatch<SetStateAction<boolean>>;
   setIsFileConverted: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function FileForm({
-  fileName,
-  setFileName,
+  file,
+  setFile,
   setIsFileConverting,
   setIsFileConverted,
 }: IFileForm) {
@@ -56,7 +38,7 @@ export default function FileForm({
   };
   const onChangeInput = (event: React.FormEvent<HTMLInputElement>) => {
     if (event.currentTarget.files) {
-      setFileName(event.currentTarget.files[0].name);
+      setFile(event.currentTarget.files[0]);
     }
   };
   const onClickFileConvert = () => {
@@ -66,18 +48,21 @@ export default function FileForm({
       setIsFileConverted(true);
     }, 1500);
   };
+  const onClickReUpload = () => {
+    setFile(null);
+  };
   return (
     <>
-      <TitleSection>
-        <h1>파일 변환하기</h1>
-        {fileName ? (
+      <MainSection>
+        <TitleText huge>파일 변환하기</TitleText>
+        {file ? (
           <>
-            <FileBox>{fileName}</FileBox>
+            <FileBox>{file.name}</FileBox>
             <Buttons>
               <MainButton onClick={onClickFileConvert}>
                 파일 변환하기
               </MainButton>
-              <SubButton>파일 재업로드</SubButton>
+              <SubButton onClick={onClickReUpload}>파일 재업로드</SubButton>
             </Buttons>
           </>
         ) : (
@@ -86,7 +71,7 @@ export default function FileForm({
             <MainButton onClick={onFileUpload}>파일 업로드</MainButton>
           </>
         )}
-      </TitleSection>
+      </MainSection>
       <input
         onChange={onChangeInput}
         ref={inputRef}
