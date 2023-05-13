@@ -1,5 +1,6 @@
 "use client";
 
+import LinkButton from "@/components/Buttons/LinkButton";
 import MainButton from "@/components/Buttons/MainButton";
 import CustomLink from "@/components/CustomLink";
 import ContentText from "@/components/Sections/ContentText";
@@ -17,33 +18,33 @@ export default function Home() {
         <TitleText huge={false}>파일 변환 기능</TitleText>
         <ContentText>간단 소개 문구</ContentText>
         <CustomLink href="/convert">
-          <MainButton>파일 변환하기</MainButton>
+          <LinkButton>파일 변환하기</LinkButton>
         </CustomLink>
       </MainSection>
       <MainSection>
         <TitleText huge={false}>기출 DB</TitleText>
         <ContentText>간단 소개 문구</ContentText>
         <CustomLink href="/previous-test">
-          <MainButton>기출 DB</MainButton>
+          <LinkButton>기출 DB</LinkButton>
         </CustomLink>
       </MainSection>
       <MainSection>
         <TitleText huge={false}>3D 프린터기</TitleText>
         <ContentText>간단 소개 문구</ContentText>
-        <MainButton>See More 3</MainButton>
+        <LinkButton>See More 3</LinkButton>
       </MainSection>
       <MainSection>
         <TitleText huge={false}>도움말</TitleText>
         <ContentText>간단 소개 문구</ContentText>
         <CustomLink href="/faq">
-          <MainButton>FAQ</MainButton>
+          <LinkButton>FAQ</LinkButton>
         </CustomLink>
       </MainSection>
       <MainSection>
         <TitleText huge={false}>문의하기</TitleText>
         <ContentText>간단 소개 문구</ContentText>
         <CustomLink href="/help">
-          <MainButton>문의하기</MainButton>
+          <LinkButton>문의하기</LinkButton>
         </CustomLink>
       </MainSection>
     </>

@@ -23,7 +23,10 @@ const NavButton = ({
   href,
   pathname,
   children,
-}: { href: string; pathname: string } & ChildrenType) => {
+}: {
+  href: string;
+  pathname: string;
+} & ChildrenType) => {
   return (
     <NavButtonContainer $isNow={pathname === href}>
       <CustomLink href={href}>{children}</CustomLink>
