@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { CommonProps } from "./props";
 
 const MAIN_COLOR = "#2d3648";
 const WHITE = "#FFFFFF";
@@ -23,8 +24,8 @@ const Button = styled.button`
   }
 `;
 
-const MainButton = ({ children }: { children: React.ReactNode }) => {
-  return <Button>{children}</Button>;
+const MainButton = ({ children, onClick }: CommonProps) => {
+  return <Button onClick={onClick}>{children}</Button>;
 };
 
 export default MainButton;

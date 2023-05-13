@@ -3,6 +3,8 @@
 import FileBox from "@/app/convert/FileBox";
 import { styled } from "styled-components";
 import { Dispatch, SetStateAction } from "react";
+import MainButton from "@/components/Buttons/MainButton";
+import SubButton from "@/components/Buttons/SubButton";
 
 const TitleSection = styled.section`
   margin-top: 143px;
@@ -34,18 +36,6 @@ const Buttons = styled.div`
   }
 `;
 
-const Button = styled.button`
-  text-align: center;
-  all: unset;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2d3648;
-  border: 2px solid #2d3648;
-  border-radius: 6px;
-  padding: 12px 20px;
-`;
-
 interface IFileDownload {
   fileName: string;
   setFileName: Dispatch<SetStateAction<string>>;
@@ -70,8 +60,8 @@ export default function FileDownload({
       <h1>파일 변환 완료</h1>
       <FileBox>{brfFileName}</FileBox>
       <Buttons>
-        <Button onClick={() => {}}>BRF 파일 다운로드</Button>
-        <Button onClick={onClickNew}>새 파일 변환하기</Button>
+        <MainButton onClick={() => {}}>BRF 파일 다운로드</MainButton>
+        <SubButton onClick={onClickNew}>새 파일 변환하기</SubButton>
       </Buttons>
     </TitleSection>
   );

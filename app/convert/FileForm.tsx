@@ -1,6 +1,8 @@
 "use client";
 
 import FileBox from "@/app/convert/FileBox";
+import MainButton from "@/components/Buttons/MainButton";
+import SubButton from "@/components/Buttons/SubButton";
 import { Dispatch, SetStateAction, useRef } from "react";
 import { styled } from "styled-components";
 
@@ -32,18 +34,6 @@ const Buttons = styled.div`
   :last-child {
     margin-bottom: 30px;
   }
-`;
-
-const Button = styled.button`
-  text-align: center;
-  all: unset;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  color: #2d3648;
-  border: 2px solid #2d3648;
-  border-radius: 6px;
-  padding: 12px 20px;
 `;
 
 interface IFileForm {
@@ -84,14 +74,16 @@ export default function FileForm({
           <>
             <FileBox>{fileName}</FileBox>
             <Buttons>
-              <Button onClick={onClickFileConvert}>파일 변환하기</Button>
-              <Button>파일 재업로드</Button>
+              <MainButton onClick={onClickFileConvert}>
+                파일 변환하기
+              </MainButton>
+              <SubButton>파일 재업로드</SubButton>
             </Buttons>
           </>
         ) : (
           <>
             <p>간단 소개 문구</p>
-            <Button onClick={onFileUpload}>파일 업로드</Button>
+            <MainButton onClick={onFileUpload}>파일 업로드</MainButton>
           </>
         )}
       </TitleSection>
