@@ -3,6 +3,7 @@
 import FileBox from "@/app/convert/FileBox";
 import MainButton from "@/components/Buttons/MainButton";
 import SubButton from "@/components/Buttons/SubButton";
+import ContentText from "@/components/Sections/ContentText";
 import MainSection from "@/components/Sections/MainSection";
 import TitleText from "@/components/Sections/TitleText";
 import { Dispatch, SetStateAction, useRef } from "react";
@@ -54,10 +55,13 @@ export default function FileForm({
   return (
     <>
       <MainSection>
-        <TitleText huge>파일 변환하기</TitleText>
         {file ? (
           <>
+            <TitleText huge>업로드된 파일 변환하기</TitleText>
+            <ContentText>파일이 업로드 되었습니다</ContentText>
             <FileBox>{file.name}</FileBox>
+            <ContentText>{`점자로 변환하기 위해  “점자로 변환하기” 버튼을 선택하세요.
+다른 파일을 업로드 하고 싶다면 “파일 재업로드" 버튼을 선택하세요.`}</ContentText>
             <Buttons>
               <MainButton onClick={onClickFileConvert}>
                 파일 변환하기
@@ -67,7 +71,9 @@ export default function FileForm({
           </>
         ) : (
           <>
-            <p>간단 소개 문구</p>
+            <TitleText huge>파일 변환 시작</TitleText>
+            <ContentText>{`파일 변환을 시작하기 위해 변환하고자 하는 파일을
+ “파일 업로드" 버튼을 눌러 선택 및 업로드 해주세요`}</ContentText>
             <MainButton onClick={onFileUpload}>파일 업로드</MainButton>
           </>
         )}

@@ -7,6 +7,7 @@ import MainButton from "@/components/Buttons/MainButton";
 import SubButton from "@/components/Buttons/SubButton";
 import MainSection from "@/components/Sections/MainSection";
 import TitleText from "@/components/Sections/TitleText";
+import ContentText from "@/components/Sections/ContentText";
 
 const Buttons = styled.div`
   display: flex;
@@ -49,7 +50,10 @@ export default function FileDownload({
   return (
     <MainSection>
       <TitleText huge>파일 변환 완료</TitleText>
+      <ContentText>파일 점자 변환이 성공적으로 완료되었습니다.</ContentText>
       <FileBox>brf파일</FileBox>
+      <ContentText>{`변환된 파일을 다운로드하기 위해 “BRF 파일 다운로드” 버튼을 선택하세요.
+새 파일을 변환하고 싶다면 “새 파일 변환하기" 버튼을 선택하세요.`}</ContentText>
       <Buttons>
         <MainButton onClick={onClickDownload}>BRF 파일 다운로드</MainButton>
         <SubButton onClick={onClickNew}>새 파일 변환하기</SubButton>
