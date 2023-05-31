@@ -6,8 +6,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SK Sunny",
-  description: "우리마을리빙랩",
+  title: "SUNNY BRAILLE",
+  description:
+    "Sunny Braille은 해바라기팀이 개발한 교육용 웹 점역 소프트웨어 입니다.",
 };
 
 export default function RootLayout({
